@@ -104,7 +104,6 @@ This JSON data is pushed to Telegraf, which parses it and sends it to InfluxDB f
 
 Of course, you can choose any other data format option and adapt the Telegraf service accordingly. You can find the operating instructions for the Push Service on the [Fronius website](https://www.fronius.com).
 
----
 
 ## 📈 Accessing Data in InfluxDB
 
@@ -130,7 +129,7 @@ Once the stack is running, and the Fronius inverter is pushing data, you can acc
 
 ![InfluxDB Dashboard Example](./images/influxdb-dashboard-sample.png)
 
----
+
 
 ## ▶️ Running the Stack
 
@@ -148,7 +147,6 @@ To stop the stack:
 docker compose down
 ```
 
----
 
 ## 🌐 Port Configuration
 
