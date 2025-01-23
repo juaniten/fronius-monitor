@@ -7,21 +7,21 @@ This repository contains a Docker Compose stack designed to capture real-time ph
 
 The Fronius inverter uses the **SolarAPI v1 - CurrentData - PowerFlow** to push energy flow data to Telegraf. This service sends JSON-formatted data which includes real-time information about power production, consumption, grid import/export, and more.
 
-## Table of Contents
+## 📋 Table of Contents
 
-1. [Prerequisites](#prerequisites)
-2. [Cloning the Repository](#cloning-the-repository)
-3. [Configuration](#configuration)
-   - [.env File](#env-file)
-   - [InfluxDB Setup](#influxdb-setup)
-   - [Fronius Inverter Configuration](#fronius-inverter-configuration)
-   - [Understanding Fronius Push Service Data](#understanding-fronius-push-service-data)
-4. [Accessing Data in InfluxDB](#accessing-data-in-influxdb)
-5. [Running the Stack](#running-the-stack)
-6. [Port Configuration](#port-configuration)
-7. [Security Considerations](#security-considerations)
+1. [⚙️ Prerequisites](#prerequisites)
+2. [📂 Cloning the Repository](#cloning-the-repository)
+3. [🔧 Configuration](#configuration)
+   - [📄 .env File](#env-file)
+   - [📊 InfluxDB Setup](#influxdb-setup)
+   - [🔌 Fronius Inverter Configuration](#fronius-inverter-configuration)
+   - [📜 Understanding Fronius Push Service Data](#understanding-fronius-push-service-data)
+4. [📈 Accessing Data in InfluxDB](#accessing-data-in-influxdb)
+5. [▶️ Running the Stack](#running-the-stack)
+6. [🌐 Port Configuration](#port-configuration)
+7. [🔒 Security Considerations](#security-considerations)
 
-## Prerequisites
+## ⚙️ Prerequisites
 
 Before starting, ensure you have the following installed:
 
@@ -30,7 +30,7 @@ Before starting, ensure you have the following installed:
 
 You will also need access to your Fronius inverter's web interface for configuring the push service.
 
-## Cloning the Repository
+## 📂 Cloning the Repository
 
 Start by cloning this repository to your local machine:
 
@@ -39,9 +39,9 @@ git clone https://github.com/juaniten/fronius-datamanager-monitor.git
 cd fronius-datamanager-monitor
 ```
 
-## Configuration
+## 🔧 Configuration
 
-### .env File
+### 📄 .env File
 
 You need to create a `.env` file from the provided `.env.example` template to configure the environment variables.
 
@@ -60,7 +60,7 @@ You need to create a `.env` file from the provided `.env.example` template to co
    - `TELEGRAF_ENDPOINT_PATH_NAME`: Endpoint path that Telegraf will expose. This should match the Fronius push service path (e.g., `fronius`).
    - `DOCKER_INFLUXDB_INIT_ADMIN_TOKEN`: A secure, randomly generated token (you can use `openssl rand -hex 32` to generate one).
 
-### InfluxDB Setup
+### 📊 InfluxDB Setup
 
 1. Run the stack with the following command:
 
@@ -72,7 +72,7 @@ You need to create a `.env` file from the provided `.env.example` template to co
 
 3. Navigate to `http://localhost:8086` in your browser to access the InfluxDB UI. Use the credentials from the `.env` file to log in and start using InfluxDB.
 
-### Fronius Inverter Configuration
+### 🔌 Fronius Inverter Configuration
 
 To allow your Fronius inverter to send push data to your Telegraf endpoint, follow these steps:
 
@@ -89,7 +89,7 @@ To allow your Fronius inverter to send push data to your Telegraf endpoint, foll
 
 ![InfluxDB Dashboard Example](./images/fronius-push-configuration-sample.png)
 
-### Understanding Fronius Push Service Data
+### 📜 Understanding Fronius Push Service Data
 
 The **SolarAPI v1 - CurrentData - PowerFlow** push service provides JSON data with real-time information about your PV system's power flow. This data includes:
 
@@ -106,7 +106,7 @@ Of course, you can choose any other data format option and adapt the Telegraf se
 
 ---
 
-## Accessing Data in InfluxDB
+## 📈 Accessing Data in InfluxDB
 
 Once the stack is running, and the Fronius inverter is pushing data, you can access and visualize the data using the InfluxDB UI. Here’s how:
 
@@ -132,7 +132,7 @@ Once the stack is running, and the Fronius inverter is pushing data, you can acc
 
 ---
 
-## Running the Stack
+## ▶️ Running the Stack
 
 To start the services, simply run the following command:
 
@@ -150,7 +150,7 @@ docker compose down
 
 ---
 
-## Port Configuration
+## 🌐 Port Configuration
 
 ### Local Access
 
@@ -168,14 +168,16 @@ If you want to expose your Telegraf endpoint to the internet (e.g., if your Fron
 - **Port forwarding**: Forward port `8094` (Telegraf HTTP endpoint) from your router to the machine running Docker.
 - **Firewall rules**: Ensure that the ports (e.g., `8094` for Telegraf) are open for external access.
 
----
 
-### Security
+## 🔒 Security
 
 **Note:** Consider using HTTPS and securing your Telegraf endpoint with basic authentication or TLS for secure data transmission.
 
----
 
-## License
+## 🤝 Contributing
+
+If you'd like to contribute, please fork the repository and open a pull request to the `main` branch.
+
+## 📜 License
 
 This project is licensed under the MIT License.
