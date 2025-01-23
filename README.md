@@ -172,7 +172,7 @@ If you want to expose your Telegraf endpoint to the internet (e.g., if your Fron
 
 ### Security
 
-**Note:** This is just a simple proof of concept for toying around, not suitable for production. Consider using HTTPS and securing your Telegraf endpoint with basic authentication or TLS for secure data transmission.
+**Note:** Consider using HTTPS and securing your Telegraf endpoint with basic authentication or TLS for secure data transmission.
 
 ---
 
