@@ -170,12 +170,3 @@ If you want to expose your Telegraf endpoint to the internet (e.g., if your Fron
 ## 🔒 Security
 
 **Note:** Consider using HTTPS and securing your Telegraf endpoint with basic authentication or TLS for secure data transmission.
-
-
-## 🤝 Contributing
-
-If you'd like to contribute, please fork the repository and open a pull request to the `main` branch.
-
-## 📜 License
-
-This project is licensed under the MIT License.
